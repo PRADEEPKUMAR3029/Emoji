@@ -1,0 +1,105 @@
+    * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+    }
+    body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        background-color: #eb640a;
+    }
+    :root {
+        --yellow-clr:#ffd726;
+        --red-clr: #f92629;
+        --brown-clr:#91520a;
+    }
+
+    .face {
+        width: 500px;
+        aspect-ratio: 1/1;
+        background-color: var(--yellow-clr);
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+        
+    .eyes {
+        width: 90%;
+        height: 35%;
+        border: 1px solid #000;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        top: 30%;
+    }
+
+    .heart {
+        position: relative;
+        z-index: 5;
+    }
+    .heart:first-of-type{
+        transform: rotate(-15deg);
+    }
+    .heart:last-of-type{
+        transform: rotate(15deg);
+    }
+
+    .square {
+        width: 100px;
+        aspect-ratio: 1/1;
+        background-color: var(--red-clr);
+        margin: 0 auto;
+        transform: rotate(45deg);
+    }
+    .square::before,
+    .square::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--red-clr);
+        border-radius: 50%;
+    }
+    .square::before{
+        transform: translateY(-50%);
+    }
+    .square::after{
+        transform: translateX(-50%);
+    }
+    /* now we have two hearts */
+
+    /* we're done with the eyes */
+
+    .mouth {
+        /* im just adding the border to see what we're doing */
+
+        border: 1px solid #000;
+        width: 80%;
+        height: 90%;
+        background-color: var(--brown-clr);
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+    }
+
+    .mouth::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 20%;
+        background-color: var(--yellow-clr);
+        width: 150%;
+        height: 100%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+    }
+    
